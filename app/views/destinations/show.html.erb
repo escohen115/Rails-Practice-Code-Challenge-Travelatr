@@ -1,0 +1,17 @@
+
+<h1><%=@destination.name%></h1>
+
+<h3> five most recent posts: </h3>
+
+<ul>
+<% @destination.five_most_recent_posts.each do |p| %>
+    <li><%=p.title%></li>
+
+<% end %>
+</ul>
+<h3>Featured Post:</h3>
+<% if @destination.featured_post %>
+    <%= link_to @destination.featured_post.title, post_path(@destination.featured_post) %>      
+<% end %>
+
+
